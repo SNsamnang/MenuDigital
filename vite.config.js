@@ -5,4 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: process.env.VIT_BASE_PATH || "/MenuDigital",
+  build: {
+    chunkSizeWarningLimit: 1000, 
+  },
 });
