@@ -6,6 +6,12 @@ export default defineConfig({
   plugins: [react()],
   base: process.env.VIT_BASE_PATH || "/MenuDigital",
   build: {
-    chunkSizeWarningLimit: 1000, 
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'], // Split vendor libraries
+        },
+      },
+    },
   },
 });
